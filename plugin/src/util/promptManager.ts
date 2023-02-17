@@ -37,7 +37,7 @@ const replaceVariables = (prompt: string, variables: { [key: string]: string }) 
         try {
             newPrompt = newPrompt.replaceAll(key, variables[key])
         } catch (error) {
-            console.log("GPTens error --> API error: ", error)
+            console.log("VishnuGPT error --> API error: ", error)
         }
     }
     return newPrompt

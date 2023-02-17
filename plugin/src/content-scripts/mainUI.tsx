@@ -1,6 +1,6 @@
 import '../style/base.css'
 import { h, render } from 'preact'
-import { getTextArea, getFooter, getRootElement, getSubmitButton, getGPTensToolbar } from '../util/elementFinder'
+import { getTextArea, getFooter, getRootElement, getSubmitButton, getVishnuGPTToolbar } from '../util/elementFinder'
 import Toolbar from 'src/components/toolbar'
 import Footer from 'src/components/footer'
 import ErrorMessage from 'src/components/errorMessage'
@@ -71,7 +71,7 @@ function pressEnter() {
 }
 
 function showErrorMessage(error: Error) {
-    console.log("GPTens error --> API error: ", error)
+    console.log("VishnuGPT error --> API error: ", error)
     let div = document.createElement('div')
     document.body.appendChild(div)
     render(<ErrorMessage message={error.message} />, div)
@@ -80,7 +80,7 @@ function showErrorMessage(error: Error) {
 
 async function updateUI() {
 
-    if (getGPTensToolbar()) return
+    if (getVishnuGPTToolbar()) return
 
     btnSubmit = getSubmitButton()
     textarea = getTextArea()
@@ -115,6 +115,6 @@ window.onload = function () {
             updateUI()
         }).observe(rootEl, { childList: true })
     } catch (e) {
-        console.info("GPTens error --> Could not update UI:\n", e.stack)
+        console.info("VishnuGPT error --> Could not update UI:\n", e.stack)
     }
 }

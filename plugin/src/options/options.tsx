@@ -12,7 +12,7 @@ const Footer = (props: { language: string; }) => (
         <p style={{ whiteSpace: "pre-line" }} className="wcg-text-sm wcg-m-0 wcg-p-1 wcg-text-center">
             {getTranslation(localizationKeys.UI.supportMe)}
         </p>
-        <a className="wcg-p-4" href="https://www.buymeacoffee.com/anzorq?utm_source=GPTens&utm_medium=options_page" target="_blank" rel="noopener noreferrer">
+        <a className="wcg-p-4" href="https://www.buymeacoffee.com/anzorq?utm_source=VishnuGPT&utm_medium=options_page" target="_blank" rel="noopener noreferrer">
             <img src="https://img.buymeacoffee.com/button-api/?text=Support this project&emoji=&slug=anzorq&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff" />
         </a>
     </div>

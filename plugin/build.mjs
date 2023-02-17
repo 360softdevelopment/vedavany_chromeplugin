@@ -67,7 +67,7 @@ async function runEsbuild() {
 async function createZipExtensionForBrowser(browser) {
   const manifest = await fs.readJson(`${buildDir}/manifest.json`);
   const version = manifest.version;
-  let archiveName = `build/GPTens-${version}-${browser}.zip`;
+  let archiveName = `build/VishnuGPT-${version}-${browser}.zip`;
 
   const archive = archiver("zip", { zlib: { level: 9 } });
   const stream = fs.createWriteStream(archiveName);

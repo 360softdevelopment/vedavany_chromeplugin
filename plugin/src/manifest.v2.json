@@ -12,7 +12,7 @@
   "permissions": [
     "storage",
     "webRequest",
-    "https://app.gptens.com/*"
+    "https://app.VishnuGPT.com/*"
   ],
   "background": {
     "scripts": ["background/bg.js"]

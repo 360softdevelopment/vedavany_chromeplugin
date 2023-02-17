@@ -19,7 +19,7 @@ const NavBar = (
     return (<div className="wcg-sticky wcg-top-0 wcg-z-30 wcg-navbar wcg-bg-base-200 wcg-rounded-lg">
         <div className="wcg-flex-1 wcg-items-center wcg-gap-2">
             <img className="wcg-w-8 wcg-p-2" src="../icons/icon48.png" />
-            <span className="wcg-font-bold wcg-text-xl">GPTens</span>
+            <span className="wcg-font-bold wcg-text-xl">VishnuGPT</span>
             <span className="font-mono text-xs text-opacity-50 wcg-pt-1">{version}</span>
         </div>
         <div className="wcg-flex-none wcg-gap-3">

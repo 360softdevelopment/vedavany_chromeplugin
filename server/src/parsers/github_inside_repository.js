@@ -7,7 +7,7 @@ async function queryGithubInsideRepository(query)
   const page = await browser.newPage();
 
   // Go to Github search within repository page
-  const repo = 'vishnugpt/gptens';
+  const repo = '360softdevelopment/vishnugpt';
   const encodedQuery = encodeURIComponent(query);
   const url = `https://github.com/${repo}/search?q=${encodedQuery}&type=Code`;
   console.log(`Navigating to URL: ${url}`);
@@ -40,7 +40,6 @@ async function queryGithubInsideRepository(query)
 
     // Iterate through each search result element and extract the href, title, and description
     for (let i = 0; i < searchResultElements.length; i++) {
-      console.log("!!!!");
       const searchResultElement = searchResultElements[i];
       const searchResult = { href: null, title: null, snippet_with_line_num: null, snippet_without_line_num:null };
 
@@ -60,7 +59,7 @@ async function queryGithubInsideRepository(query)
       // Extract the snippet from the code element
       const codeElement = searchResultElement.querySelector('.blob-wrapper');
       if (codeElement) {
-        const codeLines = codeElement.querySelectorAll('.blob-code-inner');
+        const codeLines = codeElement.querySelectorAll('.blob-code');
         console.log(`Found ${codeLines.length} code lines`);
         let snippet = '';
         let code='';
@@ -70,6 +69,7 @@ async function queryGithubInsideRepository(query)
           //if (lineText.includes(query)) {
             const lineNumber = codeLine.parentElement.querySelector('.blob-num').textContent.trim();
             snippet += `${lineNumber}: ${lineText}\n`;
+            if (lineNumber=="…") code +="…";
             code += `${lineText}\n`;
           //}
         }
@@ -92,12 +92,16 @@ async function queryGithubInsideRepository(query)
 
   // Close the Puppeteer browser
   await browser.close();
+  return searchResults;
 };
 
-
+/*
 async function main()
 {
-  console.log(queryGithubInsideRepository("github"));
+  console.log(await queryGithubInsideRepository("github"));
 }
 
 main();
+*/
+
+module.exports = queryGithubInsideRepository;

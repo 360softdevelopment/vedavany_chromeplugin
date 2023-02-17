@@ -5,6 +5,7 @@ const { JSDOM } = require('jsdom');
 const puppeteer = require('puppeteer');
 const cors = require('cors');
 
+const queryGithubInsideRepository = require('./parsers/github_inside_repository');
 
 const app = express();
 const port = 3000;
@@ -28,10 +29,10 @@ app.get('/url_to_text', async (req, res) => {
 
 app.get('/search', async (req, res) => {
   const { q, numResults } = req.query;
-  const url = `https://yandex.com/search/?text=${encodeURIComponent(q)}&numdoc=${numResults}`;
+  //const url = `https://yandex.com/search/?text=${encodeURIComponent(q)}&numdoc=${numResults}`;
 
   try {
-    var results=await loadGoogle(url);
+    var results=await queryGithubInsideRepository(encodeURIComponent(q));
     console.log(123);
     console.log(results);
     res.json(results);

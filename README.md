@@ -1,3 +1,3 @@
 <div align="center">
-<h1>GPTens</h1>
+<h1>VishnuGPT</h1>
 

@@ -10,7 +10,7 @@ export function getRootElement(): HTMLDivElement {
     return document.querySelector('div[id="__next"]')
 }
 
-export function getGPTensToolbar(): HTMLElement {
+export function getVishnuGPTToolbar(): HTMLElement {
     return document.querySelector("div[class*='wcg-toolbar']")
 }
 
